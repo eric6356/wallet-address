@@ -1,16 +1,17 @@
-import React from 'react'
+import * as React from 'react';
 
-import { randAddress } from './utils'
+import { randKey } from './utils';
 import InputHasCopy from './InputHasCopy';
 
-export default class Random extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = randAddress()
-    }
+class State {
+    pr: string;
+    address: string;
+}
 
-    newAddress() {
-        this.setState(randAddress())
+export default class Random extends React.Component<{}, State> {
+    constructor(props: {}) {
+        super(props);
+        this.state = new State();
     }
 
     render() {
@@ -25,7 +26,7 @@ export default class Random extends React.Component {
                                 <label className="label">Private Key</label>
                             </div>
                             <div className="field-body">
-                                <InputHasCopy value={this.state.pr}/>
+                                <InputHasCopy value={this.state.pr} />
                             </div>
                         </div>
                         <div className="field is-horizontal">
@@ -33,17 +34,20 @@ export default class Random extends React.Component {
                                 <label className="label">Address</label>
                             </div>
                             <div className="field-body">
-                                <InputHasCopy value={this.state.address}/>
+                                <InputHasCopy value={this.state.address} />
                             </div>
                         </div>
 
                         <div className="field is-horizontal">
-                            <div className="field-label"></div>
+                            <div className="field-label" />
                             <div className="field-body">
                                 <div className="field">
-                                    <button className="button is-black" onClick={() => this.newAddress()}>
+                                    <button
+                                        className="button is-black"
+                                        onClick={() => this.newAddress()}
+                                    >
                                         <span className="icon">
-                                            <i className="fas fa-sync"></i>
+                                            <i className="fas fa-sync" />
                                         </span>
                                         <span>New</span>
                                     </button>
@@ -53,6 +57,11 @@ export default class Random extends React.Component {
                     </div>
                 </div>
             </div>
-        )
+        );
+    }
+
+    private newAddress() {
+        const key = randKey();
+        this.setState({ pr: key.privateKey, address: key.address });
     }
 }
