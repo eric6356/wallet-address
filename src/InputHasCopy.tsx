@@ -11,7 +11,7 @@ class State {
 
 class InputHasCopy extends React.Component<Props, State> {
     control: Element;
-    input: Element;
+    input: HTMLInputElement;
     clipboard: Clipboard;
     constructor(props: Props) {
         super(props);
@@ -35,8 +35,12 @@ class InputHasCopy extends React.Component<Props, State> {
     }
 
     componentDidUpdate(prevProps: Props) {
-        if (prevProps.value !== this.props.value) {
+        if (
+            this.props.value !== undefined &&
+            this.input.value !== this.props.value
+        ) {
             this.setState({ isCopied: false });
+            this.input.value = this.props.value;
         }
     }
 
@@ -47,7 +51,6 @@ class InputHasCopy extends React.Component<Props, State> {
                     <input
                         type="text"
                         className="input"
-                        value={this.props.value}
                         ref={el => {
                             if (el) {
                                 this.input = el;

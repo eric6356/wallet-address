@@ -4,14 +4,18 @@ import { randKey } from './utils';
 import InputHasCopy from './InputHasCopy';
 
 class State {
-    pr: string;
-    address: string;
+    pr: string = '';
+    address: string = '';
 }
 
 export default class Random extends React.Component<{}, State> {
     constructor(props: {}) {
         super(props);
         this.state = new State();
+    }
+
+    componentDidMount() {
+        this.newAddress();
     }
 
     render() {
