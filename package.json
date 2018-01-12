@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.5",
+    "clipboard": "^1.7.1",
+    "elliptic": "^6.4.0",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17"
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "web3": "^1.0.0-beta.27"
   },
   "scripts": {
     "start": "react-scripts start",
