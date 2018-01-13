@@ -22,10 +22,7 @@ export default class Nav extends React.Component<{}, State> {
                     <Link className="navbar-item" to="/">
                         Wallet Address
                     </Link>
-                    <button
-                        className="button navbar-burger is-black"
-                        onClick={() => this.toggleNav()}
-                    >
+                    <button className="button navbar-burger is-black" onClick={() => this.toggleNav()}>
                         <span />
                         <span />
                         <span />
@@ -39,6 +36,9 @@ export default class Nav extends React.Component<{}, State> {
                     <div className="navbar-start">
                         <Link className="navbar-item" to="/random">
                             Random
+                        </Link>
+                        <Link className="navbar-item" to="/from-private">
+                            From Private
                         </Link>
                     </div>
                 </div>
