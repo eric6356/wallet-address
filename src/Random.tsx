@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { randKey } from './utils';
+import { createAccount } from './utils';
 import InputHasCopy from './InputHasCopy';
 
 class State {
@@ -15,7 +15,7 @@ export default class Random extends React.Component<{}, State> {
     }
 
     componentDidMount() {
-        this.newAddress();
+        this.newAccount();
     }
 
     render() {
@@ -48,7 +48,7 @@ export default class Random extends React.Component<{}, State> {
                                 <div className="field">
                                     <button
                                         className="button is-black"
-                                        onClick={() => this.newAddress()}
+                                        onClick={() => this.newAccount()}
                                     >
                                         <span className="icon">
                                             <i className="fas fa-sync" />
@@ -64,8 +64,8 @@ export default class Random extends React.Component<{}, State> {
         );
     }
 
-    private newAddress() {
-        const key = randKey();
-        this.setState({ pr: key.privateKey, address: key.address });
+    private newAccount() {
+        const account = createAccount();
+        this.setState({ pr: account.privateKey, address: account.address });
     }
 }
