@@ -35,10 +35,7 @@ class InputHasCopy extends React.Component<Props, State> {
     }
 
     componentDidUpdate(prevProps: Props) {
-        if (
-            this.props.value !== undefined &&
-            this.input.value !== this.props.value
-        ) {
+        if (this.props.value !== undefined && this.input.value !== this.props.value) {
             this.setState({ isCopied: false });
             this.input.value = this.props.value;
         }

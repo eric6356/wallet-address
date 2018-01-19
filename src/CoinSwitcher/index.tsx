@@ -53,7 +53,7 @@ class CoinSwitcherComponent extends React.Component<CoinSwitcherProps, State> {
                 </div>
                 <div className="dropdown-menu" style={{ minWidth: 0 }}>
                     <div className="dropdown-content">
-                        {['ETH', 'BTC'].map(name => (
+                        {['ETH'].map(name => (
                             <DropdownItem
                                 name={name}
                                 key={name}

@@ -40,6 +40,9 @@ export default class Nav extends React.Component<{}, State> {
                         <Link className="navbar-item" to="/from-private">
                             From Private
                         </Link>
+                        <Link className="navbar-item" to="/brain-wallet">
+                            Brain Wallet
+                        </Link>
                     </div>
                 </div>
             </nav>
