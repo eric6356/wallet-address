@@ -2,6 +2,7 @@
     "name": "wallet-address",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://eric6356.github.io/wallet-address/",
     "dependencies": {
         "bulma": "^0.6.2",
         "classnames": "^2.2.5",
@@ -17,7 +18,9 @@
         "start": "react-scripts-ts start",
         "build": "react-scripts-ts build",
         "test": "react-scripts-ts test --env=jsdom",
-        "eject": "react-scripts-ts eject"
+        "eject": "react-scripts-ts eject",
+        "predeploy": "yarn build",
+        "deploy": "gh-pages -d build"
     },
     "devDependencies": {
         "@types/classnames": "^2.2.3",
@@ -27,6 +30,7 @@
         "@types/react": "^16.0.34",
         "@types/react-dom": "^16.0.3",
         "@types/react-redux": "^5.0.14",
-        "@types/react-router-dom": "^4.2.3"
+        "@types/react-router-dom": "^4.2.3",
+        "gh-pages": "^1.1.0"
     }
 }

@@ -1,5 +1,6 @@
 # Wallet Address
 
+[https://eric6356.github.io/wallet-address/](https://eric6356.github.io/wallet-address/#/random)  
 Cryptocurrency wallet address generation tool.
 
 ## Supported Addres
